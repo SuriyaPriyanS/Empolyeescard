@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form - Employee Directory</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <nav class="form-nav">
+        <a href="index.html">← Back to Directory</a>
+        <span class="separator">/</span>
+        <span id="formBreadcrumb">Add Employee</span>
+    </nav>
+
+    <div class="form-container">
+        <div class="form-card">
+            <div class="form-header">
+                <h1 id="formTitle">Add New Employee</h1>
+                <p>Fill in the information below to add a new employee to the directory.</p>
+            </div>
+
+            <form id="employeeForm" class="form-body" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" id="employeeId" name="id">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="required">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required 
+                               placeholder="Enter first name" maxlength="50">
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName" class="required">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required 
+                               placeholder="Enter last name" maxlength="50">
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <div class="form-row single">
+                    <div class="form-group input-with-icon">
+                        <label for="email" class="required">Email Address</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="Enter email address" maxlength="100">
+                        <div class="input-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+                            </svg>
+                        </div>
+                        <span class="error-message" id="emailError"></span>
+                        <span class="help-text">This email will be used for company communications.</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="department" class="required">Department</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="HR">Human Resources</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Operations">Operations</option>
+                        </select>
+                        <span class="error-message" id="departmentError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role" class="required">Job Role</label>
+                        <input type="text" id="role" name="role" required 
+                               placeholder="Enter job role" maxlength="100">
+                        <span class="error-message" id="roleError"></span>
+                    </div>
+                </div>
+
+                <div class="form-row single">
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="notes" placeholder="Enter any additional notes..." 
+                                  maxlength="500"></textarea>
+                        <div class="char-counter">
+                            <span id="notesCounter">0</span>/500 characters
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                <button type="button" id="cancelBtn" class="cancel-btn">
+                    Cancel
+                </button>
+                <button type="button" id="deleteBtn" class="delete-btn hidden">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    Delete Employee
+                </button>
+                <button type="submit" onclick="handleFormSubmit" form="employeeForm" id="submitBtn" class="submit-btn">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                              d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Add Employee
+                </button>
+            </div>
+            </form>
+
+            
+        </div>
+    </div>
+
+        <script src="js/data.js" type="module"></script>
+    <script src="js/form.js" type="module"></script>
+</body>
+</html>
+
