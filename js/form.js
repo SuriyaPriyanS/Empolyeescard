@@ -196,7 +196,7 @@ function validateAllFields(data) {
 function handleAdd(employeeData) {
   const result = addEmployee(employeeData);
   if (result.success) {
-    showNotification('Employee added successfully!', 'success');
+    // showNotification('Employee added successfully!', 'success');
     setTimeout(() => (window.location.href = 'index.html'), 1500);
   } else {
     displayValidationErrors(result.errors);
@@ -207,7 +207,7 @@ function handleAdd(employeeData) {
 function handleUpdate(employeeData) {
   const result = updateEmployee(currentEmployeeId, employeeData);
   if (result.success) {
-    showNotification('Employee updated successfully!', 'success');
+    // showNotification('Employee updated successfully!', 'success', 'center');
     setTimeout(() => (window.location.href = 'index.html'), 1500);
   } else {
     displayValidationErrors(result.errors);

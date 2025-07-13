@@ -30,6 +30,7 @@
     <div id="filterSidebar" class="sidebar hidden">
         
         <h3>Filter Employees</h3>
+        
         <label>First Name: <input type="text" id="filterFirstName"></label>
         <label>Department: <select id="filterDepartment">
             <option value="">All</option>
@@ -50,6 +51,8 @@
 
     <label>Role: <input type="text" id="filterRole"></label>
         <button id="applyFilter">Apply</button>
+        <button id="closeFilterSidebar" class="close-btn" aria-label="Close Sidebar">✕</button>
+        
     </div>
     <div class="employee-grid" id="employeeGrid"></div>
     <div class="pagination">
