@@ -49,6 +49,8 @@ Sorting (optional):
 
 Sort by First Name or Department
 
+https://docs.google.com/document/d/1Eza09oYyRG0q4IAKpi8YPXdHYX6XAaUZIBc_ov-tN9Q/edit?tab=t.0
+
 📱 Responsive Design
 Fully responsive UI for:
 
